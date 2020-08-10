@@ -16,11 +16,15 @@ html
                     li.nav-item
                         a.nav-link(href='/articles/add') Add Article
                 ul.navbar-nav.navbar-right
-                    li.nav-item
-                        a.nav-link(href='/users/login') Login
-                    li.nav-item
-                        a.nav-link(href='/users/register') Register
-
+                    if user
+                        li.nav-item 
+                            a.nav-link(href='/users/logout') Logout
+                    else
+                        li.nav-item
+                            a.nav-link(href='/users/login') Login
+                        li.nav-item
+                            a.nav-link(href='/users/register') Register
+        br
         .container
             != messages('message', locals)
             if errors
