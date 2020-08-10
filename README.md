@@ -1,6 +1,6 @@
 # Article Knowledgebase Application
 
-This is a knowledgebase app used designed to mimic an article web service
+This is a knowledgebase app that is designed to mimic an article web service
 
 ## Technologies
 * Node.js
