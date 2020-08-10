@@ -5,8 +5,9 @@ const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const flash = require('connect-flash');
 const session = require('express-session');
+const config = require('./config/database');
 
-mongoose.connect('mongodb://localhost/nodekb');
+mongoose.connect(config.database);
 let db = mongoose.connection;
 
 //Check connection
@@ -85,6 +86,10 @@ app.get('/', (req, res) => {
 // Route Files
 let articles = require('./routes/articles');
 app.use('/articles', articles);
+
+// Users Files
+let users = require('./routes/users');
+app.use('/users', users);
 
 // Start server
 app.listen(3001, () => {
